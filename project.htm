@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Project</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 10cm;
+            background-color:lavender;
+        }
+
+        .d1 {
+            text-align: center;
+            padding: 25px;
+            background-color: rgb(255, 255, 255);
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+        }
+
+        h1 {
+            font-size: 24px;
+            color: darkcyan;
+        }
+
+        .c1 {
+            font-size: 18px;
+            color: darkblue;
+            font-weight: 800;
+            margin-top: 10px;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+
+        .c2 {
+            margin-top: 15px;
+            font-style: italic;
+            color: gray;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="d1">
+        <h1>Student's Information</h1>
+        <div class="c1" id="i1"></div>
+        <div class="c2" id="i2"></div>
+    </div>
+
+    <script>
+        class Codingal {
+            constructor(name, age) {
+                this.name = name;
+                this.age = age;
+            }
+
+            displayInfo() {
+                return "Name: " + this.name + " Age: " + this.age;
+            }
+
+            static describe() {
+                return "I am a student learning at Codingal's.";
+            }
+        }
+
+        class Student extends Codingal {
+            constructor(name, age, grade) {
+                super(name, age);
+                this.grade = grade;
+            }
+
+            displayInfo() {
+                return "Name: " + this.name + " Age: " + this.age + " Grade: " + this.grade;
+            }
+        }
+
+        const s1 = new Student("Raisa Mahmood", 14, "Grade 9");
+
+        document.getElementById("i1").innerText = s1.displayInfo();
+        document.getElementById("i2").innerText = Codingal.describe();
+    </script>
+
+</body>
+
+</html>
